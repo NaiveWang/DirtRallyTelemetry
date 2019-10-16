@@ -36,7 +36,7 @@ Subscriber is implemented in two languages, python code could be executed direct
 
 Current subsscriber grab whole telemetry table while only velocity, max RPM, current RPM and gear was extracted from it.
 
-#### driver `pending`
+#### driver `finished(python)`
 
 The driver is to communicate with microcontrollers. Note, if you broadcast to your linux boards on LAN, This step is not necessary. This part writes byte stream to the device via `/dev/ttyUSBx`. It is also implemented with both C and Python3.
 
@@ -55,6 +55,6 @@ Functionalities were implemented with three platform : `Jetson NANO(RPi liked bo
 
 
 
-#### example `pending`
+#### example `developing`
 
-Blank.
+HUD01 is a hud used to
