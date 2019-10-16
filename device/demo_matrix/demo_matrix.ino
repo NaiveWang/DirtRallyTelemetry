@@ -1,10 +1,10 @@
-//tm1,640-d,ual c,olor ,8x8 matrix
+//tm1,640-dual c,olor ,8x8 matrix
 //high 8bit -> green
 //low 8bit -> red
-#define CLK 5
-#define DIN 4
+#define CLK 8
+#define DIN 7
 
-#define D 2
+#define D 1
 byte alphabet[12][16] = {
   {0x7F, 0x09, 0x19, 0x29, 0x46, 0x00, 0x00, 0x00, 0x7F, 0x09, 0x19, 0x29, 0x46, 0x00, 0x00, 0x00},
   {0x00, 0x42, 0x7F, 0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x42, 0x7F, 0x40, 0x00, 0x00, 0x00, 0x00},
@@ -27,7 +27,7 @@ void start() {
   digitalWrite(CLK, HIGH); delayMicroseconds(D);
   digitalWrite(DIN, HIGH); delayMicroseconds(D);
   digitalWrite(DIN, LOW); delayMicroseconds(D);
-  digitalWrite(CLK, LOW); delayMicroseconds(D);
+  //digitalWrite(CLK, LOW); delayMicroseconds(D);
 }
 void stop() {
   digitalWrite(CLK, HIGH); delayMicroseconds(D);
@@ -39,8 +39,8 @@ void write_byte(byte b) {
   static byte i;
   digitalWrite(CLK, LOW); delayMicroseconds(D);
   for (i = 0; i < 8; i++) {
-    Serial.print(b & 0x01);
-
+    //Serial.print(b & 0x01);
+    digitalWrite(CLK, LOW);
     if (b & 0x01) {
       //write HIGH
       digitalWrite(DIN, HIGH);
@@ -49,13 +49,11 @@ void write_byte(byte b) {
       digitalWrite(DIN, LOW);
     }
     delayMicroseconds(D);
-
     digitalWrite(CLK, HIGH); delayMicroseconds(D);
-    digitalWrite(CLK, LOW); delayMicroseconds(D);
 
     b >>= 1;
   }
-  Serial.println("");
+  //Serial.println("");
 }
 void cmd(byte c) {
   start();
@@ -77,31 +75,29 @@ void write_block(int slice) {
 }
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(115200);
-  Serial.println("init");
-  delay(1);
+  //Serial.begin(115200);
+  //Serial.println("init");
+  //delay(1);
   pinMode(DIN, OUTPUT);
   pinMode(CLK, OUTPUT);
   digitalWrite(DIN, HIGH);
   digitalWrite(CLK, HIGH);
-  delay(1);
+  //delay(1);
 
   cmd(0x40);
-  start();
-  write_byte(0xcf);
-  write_byte(0xff);
-  stop();
-  cmd(0x8c);
+  
+  cmd(0x8a);
   //cmd(0x40);
 }
 
 int x = 0;
 void loop() {
-  delay(500);
-  Serial.println("data");
+  
+  //Serial.println("data");
   // put your main code here, to run repeatedly:
   write_block(x);
 
   x = (x + 1) % 11;
+  delay(1000);
 
 }

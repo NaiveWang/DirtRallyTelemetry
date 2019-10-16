@@ -17,7 +17,7 @@ POS_RPM_CURR=37
 POS_V=7
 
 RETRY_MAX=15
-BUFF_SIZE=256
+BUFF_SIZE=1024
 
 device = serial.Serial(SERIAL_PORT, 115200, timeout=25)
 device.flush()
@@ -37,7 +37,7 @@ for i in range(RETRY_MAX):
                 stdout.write('GEAR:%s\tPOW:%lf%%\tV:%03dkph\r'%(GEAR[info[POS_GEAR]], info[POS_RPM_CURR]*100./info[POS_RPM_MAX], int(info[POS_V]*3.6)))
                 stdout.flush()
 
-                device.write(struct.pack('<hBB', int(info[POS_V]*3.6), int(info[POS_RPM_CURR]*256./info[POS_RPM_MAX]), int(info[POS_GEAR])))
+                device.write(struct.pack('<hBB', int(info[POS_V]*3.6), int(info[POS_RPM_CURR]*255./info[POS_RPM_MAX]), int(info[POS_GEAR])))
                 device.flush()
             else:
                 # broken sock, fallback and reconnect
