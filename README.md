@@ -65,6 +65,8 @@ Build examples and tutorials.
 
 #### HUD01(Arduino) `finished`
 
+[video](https://youtu.be/vsle2yzDQVw)
+
 [snapshot](https://github.com/NaiveWang/DirtRallyTelemetry/blob/master/examples/hud01/IMG20191016220319.jpg)
 
 [docs](https://github.com/NaiveWang/DirtRallyTelemetry/blob/master/examples/hud01/README.md)
