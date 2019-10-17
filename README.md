@@ -1,5 +1,7 @@
 # telemetry board for Dirt Rally
 
+[![GitHub license](https://img.shields.io/badge/license-GPL3.0-blue.svg)](https://github.com/NaiveWang/DirtRallyTelemetry/blob/master/LICENSE)
+
 This project is to build a controller utility for developers and Dirt Rally fanboys.
 
 Build Enviroment: OS:**Arch Linux**, **Dirt Rally on linux**, **GCC**, **Python3.7**
