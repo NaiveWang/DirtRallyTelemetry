@@ -4,7 +4,9 @@
 
 This project is to build a controller utility for developers and Dirt Rally fanboys.
 
-Build Enviroment: OS:**Arch Linux**, **Dirt Rally on linux**, **GCC**, **Python3.7**
+* Build Enviroment: OS:**Arch Linux**, **Dirt Rally on linux**, **GCC**, **Python3.7**
+
+* Avaliable in `Arduino`, ~`Jetson Nano`~, ~`STM32 Blue Pill`~
 
 *No guarantee for Windows players*
 
@@ -42,7 +44,7 @@ Current subsscriber grab whole telemetry table while only velocity, max RPM, cur
 
 The driver is to communicate with microcontrollers. Note, if you broadcast to your linux boards on LAN, This step is not necessary. This part writes byte stream to the device via `/dev/ttyUSBx`. It is also implemented with both C and Python3.
 
-#### device `developing`
+#### device `finished(Arduino)`
 
 Control flows for specified peripherals.
 
@@ -57,6 +59,15 @@ Functionalities were implemented with three platform : `Jetson NANO(RPi liked bo
 
 
 
-#### example `developing`
+## examples
 
-HUD01 is a hud used to
+Build examples and tutorials.
+
+#### HUD01(Arduino) `finished`
+
+[snapshot](https://github.com/NaiveWang/DirtRallyTelemetry/blob/master/examples/hud01/IMG20191016220319.jpg)
+
+[docs](https://github.com/NaiveWang/DirtRallyTelemetry/blob/master/examples/hud01/README.md)
+
+#### HUD01(Jetson Nano) `Pending`
+#### HUD01(STM32 Blue Pill) `Pending`
