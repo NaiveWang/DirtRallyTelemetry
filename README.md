@@ -14,7 +14,7 @@ This project is to build a controller utility for developers and Dirt Rally fanb
 
 The Dirt Rally game provides with a UDP telemetry broadcasting port for users(you need to open it if you have never configured it before). This project contains four modules: the **subscriber** to grab data from the UDP broadcasting(socket), the **driver** to communicate with microcontroller, the **deivce** which includes only controlling flows for driving peripherals such as LED digits and huds, and the **examples**, which provide with well-build integrated demos.
 
-## Configure Diry Rally UDP port **`IMPORTANT`**
+## Configure Dirt Rally UDP port **`IMPORTANT`**
 
 for linux users, it is located at `~/.local/share/feral-interactive/DiRT Rally/VFS/User/AppData/Roaming/My Games/DiRT Rally/hardwaresettings/hardware_settings_config.xml`
 
