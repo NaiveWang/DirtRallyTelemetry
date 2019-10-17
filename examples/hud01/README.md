@@ -2,6 +2,7 @@
 
 This is a tutorial for building a hud for Diry Rally
 
+[video](https://youtu.be/vsle2yzDQVw)
 ![snapshot](https://github.com/NaiveWang/DirtRallyTelemetry/blob/master/examples/hud01/IMG20191016220319.jpg)
 
 ## Components
