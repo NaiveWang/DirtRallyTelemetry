@@ -54,7 +54,7 @@ Arduino uno is the same as nano
 
 0. Set up wire
 1. Connect Arduino board to your computer.
-2. Open, Compile & Upload `hud_dev` project. ( you may encounter a perimission issue, no fuss, just `chmod a+rw` to `/dev/ttyUSBx`port). If it was wired and set properly, the dots of the matrix should be all up either red or green execlusively and the 4 digits LED should be like `----`. ![snapshot]()
+2. Open, Compile & Upload `hud_dev` project. ( you may encounter a perimission issue, no fuss, just `chmod a+rw` to `/dev/ttyUSBx`port). If it was wired and set properly, the dots of the matrix should be all up either red or green execlusively and the 4 digits LED should be like `----`. ![snapshot](https://github.com/NaiveWang/DirtRallyTelemetry/blob/master/examples/hud01/IMG20191020115613.jpg)
 3. Assume you have configured your Dirt game properly, configure Arduino port in `driver.py` and start it by `python driver.py` or `python3 driver.py`, now it started to listen on UDP port.
 
 4. Open Dirt game, the hud start to read data while waiting for loading maps
